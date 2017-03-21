@@ -1,0 +1,17 @@
+.jogo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+}
+
+.jogo > div {
+    background-color: red;
+    height: 50px;
+    width: 50px;
+    float: left;
+    position: relative;
+}
+
+.jogo > div:hover {
+    background-color: dodgerblue;
+}

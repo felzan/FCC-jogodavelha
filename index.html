@@ -1,0 +1,181 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Jogo da Velha</title>
+    </head>
+    <body>
+        <div class="jogo">
+            <div class="cx" id="l11"></div>
+            <div class="cx" id="l12"></div>
+            <div class="cx" id="l13"></div>
+            <br>
+            <div class="cx" id="l21"></div>
+            <div class="cx" id="l22"></div>
+            <div class="cx" id="l23"></div>
+            <br>
+            <div class="cx" id="l31"></div>
+            <div class="cx" id="l32"></div>
+            <div class="cx" id="l33"></div>
+        </div>
+        <button id="verificar">VERIFICAR</button>
+    </body>
+    <script>
+        let jogo = [["","",""],
+                    ["","",""],
+                    ["","",""]]
+        let game = 0;
+
+        turnMark = "X"
+        
+        document.getElementById("verificar").addEventListener("click", function() {
+            console.log(jogo[0])
+            console.log(jogo[1])
+            console.log(jogo[2])
+        })
+
+        document.getElementById("l11").addEventListener("click", function() {
+            if (jogo[0][0] == 0) {
+                document.getElementById("l11").innerHTML = turnMark
+                jogo[0][0] = turnMark
+                turnMark == "X" ? turnMark = "O" : turnMark = "X"
+                ganhou()
+            }
+        })
+        
+        document.getElementById("l12").addEventListener("click", function() {
+            if (jogo[0][1] == 0) {
+                document.getElementById("l12").innerHTML = turnMark
+                jogo[0][1] = turnMark
+                turnMark == "X" ? turnMark = "O" : turnMark = "X"
+                ganhou()
+            }
+        })
+        
+        document.getElementById("l13").addEventListener("click", function() {
+            if (jogo[0][2] == 0) {
+                document.getElementById("l13").innerHTML = turnMark
+                jogo[0][2] = turnMark
+                turnMark == "X" ? turnMark = "O" : turnMark = "X"
+                ganhou()
+            }
+        })
+        
+        document.getElementById("l21").addEventListener("click", function() {
+            if (jogo[1][0] == 0) {
+                document.getElementById("l21").innerHTML = turnMark
+                jogo[1][0] = turnMark
+                turnMark == "X" ? turnMark = "O" : turnMark = "X"
+                ganhou()
+            }
+        })
+        
+        document.getElementById("l22").addEventListener("click", function() {
+            if (jogo[1][1] == 0) {
+                document.getElementById("l22").innerHTML = turnMark
+                jogo[1][1] = turnMark
+                turnMark == "X" ? turnMark = "O" : turnMark = "X"
+                ganhou()
+            }
+        })
+        
+        document.getElementById("l23").addEventListener("click", function() {
+            if (jogo[1][2] == 0) {
+                document.getElementById("l23").innerHTML = turnMark
+                jogo[1][2] = turnMark
+                turnMark == "X" ? turnMark = "O" : turnMark = "X"
+                ganhou()
+            }
+        })
+        
+        document.getElementById("l31").addEventListener("click", function() {
+            if (jogo[2][0] == 0) {
+                document.getElementById("l31").innerHTML = turnMark
+                jogo[2][0] = turnMark
+                turnMark == "X" ? turnMark = "O" : turnMark = "X"
+                ganhou()
+            }
+        })
+        
+        document.getElementById("l32").addEventListener("click", function() {
+            if (jogo[2][1] == 0) {
+                document.getElementById("l32").innerHTML = turnMark
+                jogo[2][1] = turnMark
+                turnMark == "X" ? turnMark = "O" : turnMark = "X"
+                ganhou()
+            }
+        })
+        
+        document.getElementById("l33").addEventListener("click", function() {
+            if (jogo[2][2] == 0) {
+                document.getElementById("l33").innerHTML = turnMark 
+                jogo[2][2] = turnMark
+                turnMark == "X" ? turnMark = "O" : turnMark = "X"
+                ganhou()
+            }
+        })
+
+        // 3 horizontal
+        // 3 vertical
+        // 2 diagonal
+        function ganhou() {
+
+            // HORIZONTAL
+            if (jogo[0][0] == "X" && jogo[0][1] == "X" && jogo[0][2] == "X" ) {
+                alert (jogo[0][0] + "Ganhou 1")
+            }
+            else if (jogo[1][0] == "X" && jogo[1][1] == "X" && jogo[1][2] == "X") {
+                alert (jogo[1][0] + "Ganhou 2")
+            }
+            else if (jogo[2][0] == "X" && jogo[2][1] == "X" && jogo[2][2] == "X") {
+                alert (jogo[2][0] + "Ganhou 3")
+            }
+            //VERTICAL
+            else if (jogo[0][0] == "X" && jogo[1][0] == "X" && jogo[2][0] == "X") {
+                alert (jogo[0][0] + "Ganhou 4")
+            }
+            else if (jogo[0][1] == "X" && jogo[1][1] == "X" && jogo[2][1] == "X") {
+                alert (jogo[0][1] + "Ganhou 5")
+            }
+            else if (jogo[2][0] == "X" && jogo[2][1] == "X" && jogo[2][2] == "X") {
+                alert (jogo[2][0] + "Ganhou 6")
+            }
+            // DIAGONAL
+            else if (jogo[0][0] == "X" && jogo[1][1] == "X" && jogo[2][2] == "X") {
+                alert (jogo[0][0] + "Ganhou 7")
+            }
+            else if (jogo[2][0] == "X" && jogo[1][1] == "X" && jogo[0][2] == "X") {
+                alert (jogo[2][0] + "Ganhou 8")
+            }
+
+            // HORIZONTAL
+            if (jogo[0][0] == "O" && jogo[0][1] == "O" && jogo[0][2] == "O" ) {
+                alert (jogo[0][0] + "Ganhou 1")
+            }
+            else if (jogo[1][0] == "O" && jogo[1][1] == "O" && jogo[1][2] == "O") {
+                alert (jogo[1][0] + "Ganhou 2")
+            }
+            else if (jogo[2][0] == "O" && jogo[2][1] == "O" && jogo[2][2] == "O") {
+                alert (jogo[2][0] + "Ganhou 3")
+            }
+            //VERTICAL
+            else if (jogo[0][0] == "O" && jogo[1][0] == "O" && jogo[2][0] == "O") {
+                alert (jogo[0][0] + "Ganhou 4")
+            }
+            else if (jogo[0][1] == "O" && jogo[1][1] == "O" && jogo[2][1] == "O") {
+                alert (jogo[0][1] + "Ganhou 5")
+            }
+            else if (jogo[2][0] == "O" && jogo[2][1] == "O" && jogo[2][2] == "O") {
+                alert (jogo[2][0] + "Ganhou 6")
+            }
+            // DIAGONAL
+            else if (jogo[0][0] == "O" && jogo[1][1] == "O" && jogo[2][2] == "O") {
+                alert (jogo[0][0] + "Ganhou 7")
+            }
+            else if (jogo[2][0] == "O" && jogo[1][1] == "O" && jogo[0][2] == "O") {
+                alert (jogo[2][0] + "Ganhou 8")
+            }
+
+
+        }
+    </script>
+</html>
